@@ -13,8 +13,10 @@ class Solution:
                         dp[i][j] = max(dp[i-1][j], dp[i][j-1])
             return dp[n][m]
 
-        def longestPalinSubseq(S):
+        def longestPalinSubseq(S): s
 
-            return LCS(S, S[::-1], len(S), len(S))
+        return LCS(S, S[::-1], len(S), len(S))
 
         return len(s)-longestPalinSubseq(s)
+
+# this is leetcode hard problem similar as the minimum number of delection require to convert the string a --> string b.
