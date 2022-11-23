@@ -1,7 +1,14 @@
 
-# https://leetcode.com/problems/coin-change/import sys
+
+'''
+Given an integer n, return the least number of perfect square numbers that sum to n.
+A perfect square is an integer that is the square of an integer; in other words, it is the product of some integer with itself. For example, 1, 4, 9, and 16 are perfect squares while 3 and 11 are not.
+
+'''
+
 
 import math
+
 global intmax
 
 intmax = math.inf-1
@@ -36,11 +43,16 @@ def coins_change2(coins, s):
         return -1
 
 
-# coins = [1, 2, 5]
-# amount = 11
-coins = [2]
-amount = 3
-print(coins_change2(coins, amount))
+n = 13
+
+arr = []
+
+i = 7217
+while(i**2 < n+1):
+    arr.append(i**2)
+    i += 1
+
+print(coins_change2(arr, n))
 
 
 '''
@@ -50,7 +62,13 @@ using namespace std;
 #define INF INT_MAX-1
 class Solution {
 public:
-    int coinChange(vector<int>& coins, int sum) {
+    int numSquares(int sum) {
+    vector<int> coins;
+    int i =1;
+    while(pow(i,2)<sum+1){
+        coins.push_back(pow(i,2));
+        i++;
+    }
     int n=coins.size();
     int t[n + 1][sum + 1];
 	// initialization
@@ -68,7 +86,6 @@ public:
 			}
 		}
 	}
-
 	t[0][0] = 0;
 
 	for (int i = 1; i <= n; i++)
@@ -83,6 +100,9 @@ public:
     }else{
         return t[n][sum];
     }
+
+
+
     }
 };
 
