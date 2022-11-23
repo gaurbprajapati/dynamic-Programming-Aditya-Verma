@@ -43,11 +43,11 @@ def coins_change2(coins, s):
         return -1
 
 
-n = 13
+n = 25
 
 arr = []
 
-i = 7217
+i = 1
 while(i**2 < n+1):
     arr.append(i**2)
     i += 1

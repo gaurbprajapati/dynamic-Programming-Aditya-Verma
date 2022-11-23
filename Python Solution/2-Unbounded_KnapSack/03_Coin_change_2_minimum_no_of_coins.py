@@ -36,10 +36,10 @@ def coins_change2(coins, s):
         return -1
 
 
-# coins = [1, 2, 5]
-# amount = 11
-coins = [2]
-amount = 3
+coins = [1, 2, 5]
+amount = 11
+# coins = [2]
+# amount = 3
 print(coins_change2(coins, amount))
 
 
