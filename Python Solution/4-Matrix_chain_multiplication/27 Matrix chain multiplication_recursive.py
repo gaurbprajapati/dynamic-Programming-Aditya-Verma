@@ -1,0 +1,3 @@
+
+
+def MCM(arr, n):
