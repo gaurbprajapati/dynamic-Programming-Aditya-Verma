@@ -18,12 +18,12 @@ def LCS(s1, s2, n, m):
     return cur_max
 
 
-s1 = "babad"
+s1 = "aaa"
 s2 = "dabab"
 
 
 # aba or bab -->> 3
 
-ans = LCS(s1, s1[::-1], len(s1), len(s2))
+ans = LCS(s1, s1[::-1], len(s1), len(s1))
 
 print(ans)
