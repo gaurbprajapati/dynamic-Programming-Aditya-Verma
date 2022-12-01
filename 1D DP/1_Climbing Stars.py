@@ -34,3 +34,20 @@ def climbStairs(n: int):
 
 n = 2
 print(climbStairs(n))
+
+# Space Optimization
+
+
+def climbStairs(n: int):
+    prev2 = 1
+    prev1 = 1
+    for i in range(2, n+1):
+        curr = prev2+prev1
+        prev2 = prev1
+        prev1 = curr
+
+    return prev1
+
+
+n = 2
+print(climbStairs(n))
