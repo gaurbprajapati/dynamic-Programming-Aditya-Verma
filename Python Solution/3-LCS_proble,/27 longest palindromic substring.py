@@ -1,6 +1,11 @@
 
 from numpy import matrix
 
+'''
+Print length of longest palindromic substring...
+
+'''
+
 
 def LCS(s1, s2, n, m):
     dp = [[0]*(m+1) for i in range(n+1)]
