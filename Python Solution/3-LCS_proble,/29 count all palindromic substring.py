@@ -28,6 +28,11 @@ class Solution:
         return ans
 
 
+ob = Solution()
+output = ob.countSubstrings("heeel")
+print(output)
+
+
 '''
 
 # this is java correct solution

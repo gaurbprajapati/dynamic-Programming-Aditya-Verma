@@ -26,6 +26,9 @@ class Solution:
         return ans
 
 
+ob = Solution()
+output = ob.longestPalindrome("haabbaam")
+print(output)
 '''
 
 class Solution {

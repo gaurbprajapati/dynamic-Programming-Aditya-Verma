@@ -29,6 +29,10 @@ class Solution:
         return ans
 
 
+ob = Solution()
+output = ob.longestPalindrome("heeel")
+print(output)
+
 '''
 
 # java correct solution
