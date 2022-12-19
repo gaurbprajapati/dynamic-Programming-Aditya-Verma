@@ -11,9 +11,9 @@ class Solution:
         for g in range(n):
             i = 0
             for j in range(g, n):
-                if(g == 0):
+                if(g == 0):  # initilization 1
                     dp[i][j] = True
-                elif (g == 1):
+                elif (g == 1):  # initilization 2
                     if (s[i] == s[j]):
                         dp[i][j] = True
                     else:
@@ -74,6 +74,8 @@ class Solution {
 }
 
 '''
+
+
 '''
 from numpy import matrix
 

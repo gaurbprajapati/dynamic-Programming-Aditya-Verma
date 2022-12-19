@@ -12,7 +12,6 @@ def fun(ind, heights, dp, k):
 
             minStep = min(minStep, jump)
         dp[i] = minStep
-
     return dp[ind-1]
 
 
