@@ -1,14 +1,7 @@
 # https://practice.geeksforgeeks.org/problems/stickler-theif-1587115621/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article
 
 
-# class Solution:
-
-#     # Function to find the maximum money the thief can get.
-#     def FindMaxSum(self, a, n):
-
-#         dp = [0 for i in range(n+1)]
-#         return self.solve(n, a, dp)
-
+# MENO SOLUTION
 def solve(ind, a, dp):
     if ind == 0:
         return a[ind]
@@ -19,14 +12,28 @@ def solve(ind, a, dp):
     pick = a[ind]+solve(ind-2, a, dp)
     notpick = solve(ind-1, a, dp)
     dp[ind] = max(pick, notpick)
-    return dp
+    return dp[ind]
+
+# Tabulation solution
+
+
+def solvetabu(ind, a, dp):
+
+    dp[0] = a[0]
+
+    for i in range(1, len(a)):
+        pick = a[i]
+        if i > 1:
+            pick += dp[i-2]
+        notPick = 0+dp[i-1]
+
+        dp[i] = max(pick, notPick)
+
+    return dp[len(a)-1]
 
 
 n = 6
-
 dp = [-1 for i in range(n+1)]
 a = [5, 5, 10, 100, 10, 5]
-# ob = Solution()
-# aav = ob.FindMaxSum(a, n)
-# print(aav)
 print(solve(n-1, a, dp))
+print(solvetabu(n-1, a, dp))
