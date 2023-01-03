@@ -64,9 +64,28 @@ def SolveTabulation(day, task, last, dp):
     return dp[day][last]
 
 
+def solveSpaceOptimization(day, task, last, prev):
+    prev[0] = max(task[0][1], task[0][2])
+    prev[1] = max(task[0][0], task[0][2])
+    prev[2] = max(task[0][0], task[0][1])
+    prev[3] = max(task[0][0], max(task[0][1], task[0][2]))
+
+    for DaY in range(1, day+1):
+        temp = [-1 for i in range(3+1)]
+        for LasT in range(4):
+            for TasK in range(3):
+                if(TasK != LasT):
+                    point = prev[TasK] + task[DaY][TasK]
+                    temp[LasT] = max(temp[LasT], point)
+        prev = temp
+
+    return prev[last]
+
+
 task = [[10, 40, 70],
         [20, 50, 80],
-        [30, 60, 90]]
+        [30, 60, 90]
+        ]
 n = len(task)
 
 dp = [[-1 for i in range(3+1)] for j in range(n+1)]
@@ -74,3 +93,8 @@ dp = [[-1 for i in range(3+1)] for j in range(n+1)]
 print(solverec(n-1, task, 3))
 print(solveMemo(n-1, task, 3, dp))
 print(SolveTabulation(n-1, task, 3, dp))
+
+prev = [-1 for i in range(3+1)]
+
+
+print(solveSpaceOptimization(n-1, task, 3, prev))
