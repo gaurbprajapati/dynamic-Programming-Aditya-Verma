@@ -1,6 +1,6 @@
 # dynamic-Programming Aditya Verma
 
-1-Knapsak_ problems
+1-Knapsak_ problems : https://github.com/gaurbprajapati/dynamic-Programming-Aditya-Verma/tree/main/Python%20Solution/1-Knapsak_%20problems
 
 2-Unbounded_KnapSack
 
